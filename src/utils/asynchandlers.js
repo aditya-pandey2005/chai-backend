@@ -1,6 +1,6 @@
 const asynchandler = (requesthandler) => {
-    (req, res, next) => {
-        Promise.resolve(requesthandler(req, res, next)).catch((err) => next(err))
+    return (req, res, next) => { //It returns a new function that Express will use as the route handler.
+        Promise.resolve(requesthandler(req, res, next)).catch((err) => next(err)) //Runs your handler. If it’s an async function (which returns a promise), it will resolve/reject properly.
     }
 }
 
