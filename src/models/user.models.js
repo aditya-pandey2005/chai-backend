@@ -30,7 +30,7 @@ const userSchema = new Schema(
             required: true
         },
         coverImage: {
-            type: string
+            type: String
         },
         watchHistory: [
             {
@@ -39,11 +39,11 @@ const userSchema = new Schema(
             }
         ],
         password: {
-            type: string,
+            type: String,
             required: [true, 'Password is required']
         },
         refreshToken: {
-            type: string
+            type: String
         }
     }, {timestamps: true}
 )
